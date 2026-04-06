@@ -1,8 +1,6 @@
 # Movie Night Project
 
-Movie Night Project is a small web app/PWA project that helps users organize movies they want to watch.
-
-Project Overview
+Overview
 
 Movie Night Planner is a small Progressive Web App that helps users keep track of movies they want to watch. Users can add movies, organize them by genre, track whether they have watched them, and manage their personal watchlist in a clean interface.
 
