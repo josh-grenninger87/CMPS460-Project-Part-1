@@ -31,7 +31,30 @@ p {
   flex-wrap: wrap;
 }
 
-input, select, button {
+.filter-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-section input,
+.filter-section select {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.filter-section input {
+  flex: 2;
+}
+
+.filter-section select {
+  flex: 1;
+}
+
+input,
+select,
+button {
   padding: 10px;
   font-size: 16px;
 }
@@ -41,6 +64,10 @@ input {
 }
 
 select {
+  flex: 1;
+}
+
+.form-section input[type="number"] {
   flex: 1;
 }
 
