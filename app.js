@@ -49,6 +49,7 @@ function renderMovies() {
           ${movie.watched ? "Unwatch" : "Watched"}
         </button>
         <button onclick="deleteMovie(${originalIndex})">Delete</button>
+        <button onclick="viewDetails(${originalIndex})">Details</button>
       </div>
     `;
 
@@ -89,6 +90,12 @@ function deleteMovie(index) {
   movies.splice(index, 1);
   saveMovies();
   renderMovies();
+}
+
+function viewDetails(index) {
+  localStorage.setItem("selectedMovie", JSON.stringify(movies[index]));
+  localStorage.setItem("selectedMovieIndex", index);
+  window.location.href = "details.html";
 }
 
 addMovieBtn.addEventListener("click", addMovie);
