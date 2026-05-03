@@ -35,6 +35,10 @@ function renderMovies() {
     return matchesSearch && matchesStatus;
   });
 
+  // ✅ Default alphabetical sort
+  filteredMovies.sort((a, b) => a.title.localeCompare(b.title));
+
+  // ✅ Rating sort override
   if (ratingSort.value === "high") {
     filteredMovies.sort((a, b) => (Number(b.rating) || 0) - (Number(a.rating) || 0));
   } else if (ratingSort.value === "low") {
@@ -50,11 +54,13 @@ function renderMovies() {
     li.innerHTML = `
       <div class="movie-info">
         ${movie.poster ? `<img src="${movie.poster}" alt="${movie.title} poster" class="poster" />` : ""}
-        <span class="${movie.watched ? "watched" : ""}">
-          <strong>${movie.title}</strong>
-        </span>
-        <small>${movie.genre} ${movie.year ? `(${movie.year})` : ""}</small>
-        <small>Rating: ${movie.rating ? "⭐".repeat(movie.rating) : "Not rated"}</small>
+        <div>
+          <span class="${movie.watched ? "watched" : ""}">
+            <strong>${movie.title}</strong>
+          </span>
+          <small>${movie.genre} ${movie.year ? `(${movie.year})` : ""}</small>
+          <small>Rating: ${movie.rating ? "⭐".repeat(movie.rating) : "Not rated"}</small>
+        </div>
       </div>
       <div class="actions">
         <button onclick="toggleWatched(${originalIndex})">
