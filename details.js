@@ -1,4 +1,4 @@
-const movieDetails = document.getElementById("movieDetails");
+﻿const movieDetails = document.getElementById("movieDetails");
 const descriptionInput = document.getElementById("movieDescription");
 
 let movies = JSON.parse(localStorage.getItem("movies")) || [];
@@ -10,10 +10,12 @@ function displayMovieDetails() {
     movieDetails.innerHTML = `
       <div class="movie-item">
         <div class="movie-info">
+          ${selectedMovie.poster ? `<img src="${selectedMovie.poster}" alt="${selectedMovie.title} poster" class="poster-large" />` : ""}
           <span><strong>${selectedMovie.title}</strong></span>
           <small>Genre: ${selectedMovie.genre}</small>
           <small>Year: ${selectedMovie.year || "Not provided"}</small>
           <small>Status: ${selectedMovie.watched ? "Watched" : "Unwatched"}</small>
+          <small>Rating: ${selectedMovie.rating ? "⭐".repeat(selectedMovie.rating) : "Not rated"}</small>
           <small><strong>Description:</strong> ${selectedMovie.description || "No description added yet."}</small>
         </div>
       </div>

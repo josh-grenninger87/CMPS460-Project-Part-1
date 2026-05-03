@@ -1,68 +1,61 @@
 ﻿body {
   font-family: Arial, sans-serif;
-  background: #f4f4f9;
+  background: linear-gradient(135deg, #111827, #1e1b4b, #312e81);
   margin: 0;
   padding: 0;
+  color: #f9fafb;
 }
 
 .container {
-  max-width: 700px;
+  max-width: 900px;
   margin: 40px auto;
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: rgba(17, 24, 39, 0.95);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #facc15;
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
 h3 {
-  color: #333;
-  margin-top: 20px;
+  color: #facc15;
+  margin-top: 25px;
 }
 
 p {
   text-align: center;
-  color: #666;
+  color: #d1d5db;
 }
 
-.form-section {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
+.form-section,
 .filter-section {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 22px;
   flex-wrap: wrap;
-}
-
-.filter-section input,
-.filter-section select {
-  padding: 10px;
-  font-size: 16px;
-}
-
-.filter-section input {
-  flex: 2;
-}
-
-.filter-section select {
-  flex: 1;
 }
 
 input,
 select,
 button,
 textarea {
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
+  border-radius: 8px;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #374151;
+  background: #f9fafb;
+  color: #111827;
 }
 
 input {
@@ -80,22 +73,21 @@ select {
 textarea {
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 6px;
   resize: vertical;
   font-family: Arial, sans-serif;
 }
 
 button {
-  background: #4f46e5;
+  background: #7c3aed;
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 6px;
+  transition: 0.2s ease;
 }
 
 button:hover {
-  background: #3730a3;
+  background: #a855f7;
+  transform: translateY(-1px);
 }
 
 #movieList {
@@ -106,28 +98,66 @@ button:hover {
 .movie-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background: #eef2ff;
-  margin-bottom: 10px;
-  padding: 12px;
-  border-radius: 8px;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  margin-bottom: 14px;
+  padding: 16px;
+  border-radius: 14px;
+  gap: 14px;
+  flex-wrap: wrap;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .movie-info {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 220px;
+}
+
+.movie-info span {
+  word-break: break-word;
+  color: #ffffff;
+  font-size: 18px;
 }
 
 .movie-info small {
   margin-top: 4px;
+  color: #d1d5db;
+}
+
+.poster {
+  width: 70px;
+  height: 105px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+
+.poster-large {
+  width: 170px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 .watched {
   text-decoration: line-through;
-  color: gray;
+  color: #9ca3af !important;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
 }
 
 .actions button {
-  margin-left: 5px;
-  padding: 6px 10px;
+  margin-left: 0;
+  padding: 8px 12px;
+  font-size: 14px;
 }

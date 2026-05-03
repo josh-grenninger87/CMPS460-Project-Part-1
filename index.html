@@ -36,6 +36,17 @@
 
       <input type="number" id="movieYear" placeholder="Year" min="1888" max="2100" />
 
+      <input type="text" id="moviePoster" placeholder="Poster image URL" />
+
+      <select id="movieRating">
+        <option value="">Rating</option>
+        <option value="1">⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+      </select>
+
       <button id="addMovieBtn">Add Movie</button>
     </div>
 
@@ -46,6 +57,12 @@
         <option value="all">All Movies</option>
         <option value="watched">Watched</option>
         <option value="unwatched">Unwatched</option>
+      </select>
+
+      <select id="ratingSort">
+        <option value="none">Sort by Rating</option>
+        <option value="high">Highest Rated First</option>
+        <option value="low">Lowest Rated First</option>
       </select>
     </div>
 
